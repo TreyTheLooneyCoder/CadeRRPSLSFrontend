@@ -1,19 +1,20 @@
-async function ComChoiceFetch() {
-    const response = await fetch('https://rpslsbackend-hkemgea7a6b6bee3.westus-01.azurewebsites.net/RPSLS/RPS');
-    const data = await response.text();
-    let comChoice = data;
-    console.log(comChoice);
-}
-
-// Controls Logic
 let p1Choice = "";
 let comChoice = "";
 
+async function ComChoiceFetch() {
+    const response = await fetch('https://rpslsbackend-hkemgea7a6b6bee3.westus-01.azurewebsites.net/RPSLS/RPS');
+    const data = await response.text();
+    comChoice = data;
+}
 
+ComChoiceFetch();
+
+// Controls Logic
 let p1Rock = document.getElementById('p1Rock');
 p1Rock.addEventListener('click', function() {
     p1Choice = "rock";
     console.log(p1Choice);
+    console.log(comChoice);
     CheckWinner();
 });
 
@@ -21,6 +22,7 @@ let p1Paper = document.getElementById('p1Paper');
 p1Paper.addEventListener('click', function() {
     p1Choice = "paper";
     console.log(p1Choice);
+    console.log(comChoice);
     CheckWinner();
 });
 
@@ -28,6 +30,7 @@ let p1Scissors = document.getElementById('p1Scissors');
 p1Scissors.addEventListener('click', function() {
     p1Choice = "scissors";
     console.log(p1Choice);
+    console.log(comChoice);
     CheckWinner();
 });
 
@@ -35,6 +38,7 @@ let p1Lizard = document.getElementById('p1Lizard');
 p1Lizard.addEventListener('click', function() {
     p1Choice = "lizard";
     console.log(p1Choice);
+    console.log(comChoice);
     CheckWinner();
 });
 
@@ -42,6 +46,7 @@ let p1Spock = document.getElementById('p1Spock');
 p1Spock.addEventListener('click', function() {
     p1Choice = "spock";
     console.log(p1Choice);
+    console.log(comChoice);
     CheckWinner();
 });
 
@@ -49,8 +54,6 @@ p1Spock.addEventListener('click', function() {
 let winner = "";
 
 function CheckChoices() {
-    ComChoiceFetch();
-
     // P1 chose rock
     if(p1Choice == 'rock' && comChoice == 'rock')
     {
@@ -156,6 +159,7 @@ function CheckChoices() {
     {
         winner = "tie";
     }   
+
 }
 
 function CheckWinner() {
@@ -164,9 +168,15 @@ function CheckWinner() {
     if(winner == "p1")
     {
         alert("Player one Wins!");
+        winner = "";
     }
     else if(winner == "p2")
     {
         alert("Player Two Wins!"); 
+        winner = "";
+    }
+    else
+    {
+        alert("Tie Game!")
     }
 }
