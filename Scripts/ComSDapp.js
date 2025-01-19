@@ -9,38 +9,39 @@ async function ComChoiceFetch() {
 let p1Choice = "";
 let comChoice = "";
 
+
 let p1Rock = document.getElementById('p1Rock');
 p1Rock.addEventListener('click', function() {
     p1Choice = "rock";
-    console.log("p1 chose rock");
+    console.log(p1Choice);
     CheckWinner();
 });
 
 let p1Paper = document.getElementById('p1Paper');
 p1Paper.addEventListener('click', function() {
     p1Choice = "paper";
-    console.log("p1 chose paper");
+    console.log(p1Choice);
     CheckWinner();
 });
 
 let p1Scissors = document.getElementById('p1Scissors');
 p1Scissors.addEventListener('click', function() {
     p1Choice = "scissors";
-    console.log("p1 chose scissors");
+    console.log(p1Choice);
     CheckWinner();
 });
 
 let p1Lizard = document.getElementById('p1Lizard');
 p1Lizard.addEventListener('click', function() {
     p1Choice = "lizard";
-    console.log("p1 chose lizard");
+    console.log(p1Choice);
     CheckWinner();
 });
 
 let p1Spock = document.getElementById('p1Spock');
 p1Spock.addEventListener('click', function() {
     p1Choice = "spock";
-    console.log("p1 chose spock");
+    console.log(p1Choice);
     CheckWinner();
 });
 
@@ -49,6 +50,7 @@ let winner = "";
 
 function CheckChoices() {
     ComChoiceFetch();
+
     // P1 chose rock
     if(p1Choice == 'rock' && comChoice == 'rock')
     {
@@ -154,12 +156,11 @@ function CheckChoices() {
     {
         winner = "tie";
     }   
-    
-    console.log(comChoice);
 }
 
 function CheckWinner() {
     CheckChoices();
+
     if(winner == "p1")
     {
         alert("Player one Wins!");
@@ -168,5 +169,4 @@ function CheckWinner() {
     {
         alert("Player Two Wins!"); 
     }
-
 }
