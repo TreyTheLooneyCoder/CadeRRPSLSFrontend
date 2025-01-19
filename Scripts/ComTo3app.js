@@ -1,5 +1,16 @@
-// P1 Logic
+async function ComChoiceFetch() {
+    const response = await fetch('https://rpslsbackend-hkemgea7a6b6bee3.westus-01.azurewebsites.net/RPSLS/RPS');
+    const data = await response.text();
+    let comChoice = data;
+    console.log(comChoice);
+}
+
+console.log(ComChoiceFetch());
+ComChoiceFetch();
+
+// Controls Logic
 let p1Choice = "";
+let comChoice = "";
 
 let p1Rock = document.getElementById('p1Rock');
 p1Rock.addEventListener('click', function() {
@@ -36,205 +47,169 @@ p1Spock.addEventListener('click', function() {
     CheckWinner();
 });
 
-// P2 Logic
-let p2Choice = '';
-
-let p2Rock = document.getElementById('p2Rock');
-p2Rock.addEventListener('click', function() {
-    p2Choice = "rock"
-    console.log("p2 chose rock");
-    CheckWinner();
-});
-
-let p2Paper = document.getElementById('p2Paper');
-p2Paper.addEventListener('click', function() {
-    p2Choice = "paper"
-    console.log("p2 chose paper");
-    CheckWinner();
-});
-
-let p2Scissors = document.getElementById('p2Scissors');
-p2Scissors.addEventListener('click', function() {
-    p2Choice = "scissors"
-    console.log("p2 chose scissors");
-    CheckWinner();
-});
-
-let p2Lizard = document.getElementById('p2Lizard');
-p2Lizard.addEventListener('click', function() {
-    p2Choice = "lizard"
-    console.log("p2 chose lizard");   
-    CheckWinner();
-});
-
-let p2Spock = document.getElementById('p2Spock');
-p2Spock.addEventListener('click', function() {
-    p2Choice = "spock"
-    console.log("p2 chose spock");
-    CheckWinner();
-});
-
 // Logic for game
 let winner = "";
 let p1Wins = 0;
-let p2Wins = 0;
+let comWins = 0;
 let roundCounter = 0;
 
 function CheckChoices() {
+    ComChoiceFetch();
+
     // P1 chose rock
-    if(p1Choice == 'rock' && p2Choice == 'rock')
+    if(p1Choice == 'rock' && comChoice == 'rock')
     {
         winner = "tie";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
-    else if(p1Choice == 'rock' && p2Choice == 'paper')
+    else if(p1Choice == 'rock' && comChoice == 'paper')
     {
         winner = "p2";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
-    else if(p1Choice == 'rock' && p2Choice == 'scissors')
+    else if(p1Choice == 'rock' && comChoice == 'scissors')
     {
         winner = "p1";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
-    else if(p1Choice == 'rock' && p2Choice == 'lizard')
+    else if(p1Choice == 'rock' && comChoice == 'lizard')
     {
         winner = "p1";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
-    else if(p1Choice == 'rock' && p2Choice == 'spock')
+    else if(p1Choice == 'rock' && comChoice == 'spock')
     {
         winner = "p2";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
     // P1 chose paper    
-    else if(p1Choice == 'paper' && p2Choice == 'rock')
+    else if(p1Choice == 'paper' && comChoice == 'rock')
     {
         winner = "p1";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
-    else if(p1Choice == 'paper' && p2Choice == 'paper')
+    else if(p1Choice == 'paper' && comChoice == 'paper')
     {
         winner = "tie";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
-    else if(p1Choice == 'paper' && p2Choice == 'scissors')
+    else if(p1Choice == 'paper' && comChoice == 'scissors')
     {
         winner = "p2";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
-    else if(p1Choice == 'paper' && p2Choice == 'lizard')
+    else if(p1Choice == 'paper' && comChoice == 'lizard')
     {
         winner = "p2";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
-    else if(p1Choice == 'paper' && p2Choice == 'spock')
+    else if(p1Choice == 'paper' && comChoice == 'spock')
     {
         winner = "p1";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
     // P1 chose scissors
-    else if(p1Choice == 'scissors' && p2Choice == 'rock')
+    else if(p1Choice == 'scissors' && comChoice == 'rock')
     {
         winner = "p2";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
-    else if(p1Choice == 'scissors' && p2Choice == 'paper')
+    else if(p1Choice == 'scissors' && comChoice == 'paper')
     {
         winner = "p1";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
-    else if(p1Choice == 'scissors' && p2Choice == 'scissors')
+    else if(p1Choice == 'scissors' && comChoice == 'scissors')
     {
         winner = "tie";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
-    else if(p1Choice == 'scissors' && p2Choice == 'lizard')
+    else if(p1Choice == 'scissors' && comChoice == 'lizard')
     {
         winner = "p1";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
-    else if(p1Choice == 'scissors' && p2Choice == 'spock')
+    else if(p1Choice == 'scissors' && comChoice == 'spock')
     {
         winner = "p2";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
     // P1 chose lizard
-    else if(p1Choice == 'lizard' && p2Choice == 'rock')
+    else if(p1Choice == 'lizard' && comChoice == 'rock')
     {
         winner = "p2";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
-    else if(p1Choice == 'lizard' && p2Choice == 'paper')
+    else if(p1Choice == 'lizard' && comChoice == 'paper')
     {
         winner = "p1";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
-    else if(p1Choice == 'lizard' && p2Choice == 'scissors')
+    else if(p1Choice == 'lizard' && comChoice == 'scissors')
     {
         winner = "p2";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
-    else if(p1Choice == 'lizard' && p2Choice == 'lizard')
+    else if(p1Choice == 'lizard' && comChoice == 'lizard')
     {
         winner = "tie";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
-    else if(p1Choice == 'lizard' && p2Choice == 'spock')
+    else if(p1Choice == 'lizard' && comChoice == 'spock')
     {
         winner = "p1";   
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }
     // P1 chose spock
-    else if(p1Choice == 'spock' && p2Choice == 'rock')
+    else if(p1Choice == 'spock' && comChoice == 'rock')
     {
         winner = "p1";  
         p1Choice = '';
-        p2Choice = '';      
+        comChoice = '';      
     }
-    else if(p1Choice == 'spock' && p2Choice == 'paper')
+    else if(p1Choice == 'spock' && comChoice == 'paper')
     {
         winner = "p2";  
         p1Choice = '';
-        p2Choice = '';      
+        comChoice = '';      
     }
-    else if(p1Choice == 'spock' && p2Choice == 'scissors')
+    else if(p1Choice == 'spock' && comChoice == 'scissors')
     {
         winner = "p1"; 
         p1Choice = '';
-        p2Choice = '';       
+        comChoice = '';       
     }
-    else if(p1Choice == 'spock' && p2Choice == 'lizard')
+    else if(p1Choice == 'spock' && comChoice == 'lizard')
     {
         winner = "p2";    
         p1Choice = '';
-        p2Choice = '';    
+        comChoice = '';    
     }
-    else if(p1Choice == 'spock' && p2Choice == 'spock')
+    else if(p1Choice == 'spock' && comChoice == 'spock')
     {
         winner = "tie";
         p1Choice = '';
-        p2Choice = '';
+        comChoice = '';
     }      
 }
 
@@ -247,7 +222,7 @@ function RoundCount() {
     }
     else if(winner == "p2")
     {
-        p2Wins++;
+        comWins++;
     }
     else if(winner == "tie")
     {
@@ -258,17 +233,17 @@ function RoundCount() {
 function CheckWinner() {
     RoundCount();
 
-    if(p1Wins == 5)
+    if(p1Wins == 1)
     {
         alert("Game Over, Player One Wins!");
         p1Wins = 0;
     }
-    else if(p2Wins == 5)
+    else if(comWins == 3)
     {
         alert("Game Over, Player Two Wins!"); 
-        p2Wins = 0;
+        comWins = 0;
     }
-    else if(roundCounter == 7)
+    else if(roundCounter == 4)
     {
         alert("SUDDEN DEATH C:<");
     }

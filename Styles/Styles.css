@@ -89,7 +89,7 @@ body {
     font-size: 3rem;
 }
 
-.pvp-rounds {
+.rounds {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
