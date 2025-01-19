@@ -47,5 +47,5 @@ Things to turn in:
 
 Be Creative and Have Fun!
 
-## Reviewed by: 
-> Comments: 
+## Reviewed by: Thao Vang
+> Comments: "For the vs player another player it is giving alert only after first click. it looks like you need to find a way to reset the choices. for the vs player on modes other than sudden death it would be nice to have some inicator whats the score. also some indication if a button was pressed or not. for the cpu, for some reason the randomization is not working for the sudden death vs cpu. for the best of 5 vs cpu, it seems like one player always wins per refresh."
